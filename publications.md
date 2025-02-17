@@ -6,4 +6,4 @@ permalink: /publications
 
 # A List
 
-of them
+of them.
