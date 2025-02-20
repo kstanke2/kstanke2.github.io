@@ -10,4 +10,5 @@ markdown: kramdown
 remote_theme: chrisrhymes/bulma-clean-theme@v0.14.0
 plugins:
   - jekyll-feed
+permalink: pretty
 fixed_navbar: top
