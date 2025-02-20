@@ -1,0 +1,12 @@
+- name: Publications
+  link: /publications/
+- name: Courses
+  link: /courses/
+  dropdown:
+    - name: STAT 462
+      link: /unl-stat-462/
+- name: Projects
+  link: /projects/
+  dropdown:
+    - name: Click2Science
+      link: /click2science/

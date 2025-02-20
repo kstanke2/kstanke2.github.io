@@ -1,0 +1,13 @@
+title: "Kimberly Stanke, Ph.D."
+description: >- # this means to ignore newlines until "baseurl:"
+  A space for musings, creative works, and a record of my professional journey.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://kstanke2.github.io" # the base hostname & protocol for your site
+github_username: kstanke2
+
+# Build settings
+markdown: kramdown
+remote_theme: chrisrhymes/bulma-clean-theme@v0.14.0
+plugins:
+  - jekyll-feed
+fixed_navbar: top
