@@ -7,4 +7,4 @@ hero_height: is-small
 
 # Things about me
 
-Some content about me or not?
+Some content about me or not? Or Yes
