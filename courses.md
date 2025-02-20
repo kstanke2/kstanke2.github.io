@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Courses Taught"
-permalink: /courses/
+permalink: /courses
 ---
 
 # University of Nebraska-Lincoln

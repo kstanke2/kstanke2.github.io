@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Publications"
-permalink: /publications/
+permalink: /publications
 hero_height: is-small
 ---
 
