@@ -79,21 +79,21 @@
                     
                         
                             <a
-                                href="/publications"
-                                class="navbar-item is-active"
+                                href="/publications/"
+                                class="navbar-item "
                             >Publications</a>
                         
                     
                         
                             <div class="navbar-item has-dropdown is-hoverable ">
                                 <a
-                                    href="/courses"
+                                    href="/courses/"
                                     class="navbar-link "
                                 >Courses</a>
                                 <div class="navbar-dropdown">
                                     
                                         <a
-                                            href="/unl-stat-462"
+                                            href="/unl-stat-462/"
                                             class="navbar-item "
                                         >STAT 462</a>
                                     
@@ -104,13 +104,13 @@
                         
                             <div class="navbar-item has-dropdown is-hoverable ">
                                 <a
-                                    href="/projects"
+                                    href="/projects/"
                                     class="navbar-link "
                                 >Projects</a>
                                 <div class="navbar-dropdown">
                                     
                                         <a
-                                            href="/click2science"
+                                            href="/click2science/"
                                             class="navbar-item "
                                         >Click2Science</a>
                                     
@@ -120,69 +120,97 @@
                     
                 
             </div>
-
-            <div class="navbar-end">
-                
+            <button class="show-hide-btn" onclick="toggleContent(this, 'citation2')">Show Citation</button>
+            <div class="citation hidden-content" id="citation2">Smith, J., Your Name, & Johnson, R. (2024). Innovative Framework for Real-Time Data Processing in IoT Environments. In Proceedings of the International Conference on IoT Applications (pp. 78-92). IEEE.</div>
+            <div class="pub-links">
+                <a href="#" class="pub-link">PDF</a>
+                <a href="#" class="pub-link">Slides</a>
+                <a href="#" class="pub-link">Code Repository</a>
             </div>
         </div>
     </div>
-</nav>
-
-        
-            <section
-    class="hero  is-small  is-bold is-primary"
     
->
-    <div class="hero-body ">
-        <div class="container">
-            <h1 class="title is-2">Publications</h1>
-            <p class="subtitle is-3"></p>
-            
-        </div>
+    <div class="year-divider">
+        <span>2023</span>
     </div>
-</section>
-
-        
-        
-
-        <section class="section">
-            <div class="container">
-                <div class="columns is-multiline">
-                    
-                    <div class="column is-12">
-                        
-
-                        
-
-                        
-
-                        
-
-                        
-<div class="content">
-    <h1 id="a-list">A List</h1>
-
-<p>of them.</p>
-
-</div>
-
-                    </div>
-                    
-                </div>
+    
+    <div class="publications-container">
+        <!-- Example Publication 3 -->
+        <div class="publication" data-type="book">
+            <div class="pub-title">Advanced Methods in Data Science: Theory and Applications</div>
+            <div class="pub-authors"><span class="highlight">Your Name</span>, Emily Chen (Eds.)</div>
+            <div class="pub-journal">Springer Publishing (2023) | Chapter 7: Advancements in Natural Language Processing, pp. 143-172</div>
+            <button class="show-hide-btn" onclick="toggleContent(this, 'abstract3')">Show Abstract</button>
+            <div class="pub-abstract hidden-content" id="abstract3">
+                This chapter provides a comprehensive overview of recent advancements in Natural Language Processing (NLP). It covers transformer-based architectures, few-shot learning, and interpretability methods. The chapter also includes a detailed case study on applying these techniques to sentiment analysis in social media data.
             </div>
-        </section>
+            <div class="pub-meta">
+                <span class="pub-tag">Natural Language Processing</span>
+                <span class="pub-tag">Transformers</span>
+                <span class="pub-tag">Book Chapter</span>
+            </div>
+            <button class="show-hide-btn" onclick="toggleContent(this, 'citation3')">Show Citation</button>
+            <div class="citation hidden-content" id="citation3">Your Name & Chen, E. (2023). Advancements in Natural Language Processing. In Your Name & E. Chen (Eds.), Advanced Methods in Data Science: Theory and Applications (pp. 143-172). Springer.</div>
+            <div class="pub-links">
+                <a href="#" class="pub-link">Publisher Link</a>
+                <a href="#" class="pub-link">Author Preprint</a>
+            </div>
+        </div>
         
-            <footer class="footer">
-    <div class="container">
-        
-
-        <div class="content is-small has-text-centered">
-            <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+        <!-- Example Publication 4 -->
+        <div class="publication" data-type="journal">
+            <div class="pub-title">Comparative Analysis of Deep Learning Techniques for Image Segmentation</div>
+            <div class="pub-authors">Robert Johnson, <span class="highlight">Your Name</span>, Lisa Wang</div>
+            <div class="pub-journal">IEEE Transactions on Image Processing (2023) | Vol. 32, No. 4, pp. 1245-1259</div>
+            <button class="show-hide-btn" onclick="toggleContent(this, 'abstract4')">Show Abstract</button>
+            <div class="pub-abstract hidden-content" id="abstract4">
+                In this paper, we present a comprehensive comparative analysis of state-of-the-art deep learning techniques for image segmentation. We evaluate performance across multiple datasets and introduce a novel hybrid approach that combines the strengths of U-Net and Transformer architectures. Our experiments demonstrate significant improvements in segmentation accuracy while maintaining computational efficiency.
+            </div>
+            <div class="pub-meta">
+                <span class="pub-tag">Computer Vision</span>
+                <span class="pub-tag">Deep Learning</span>
+                <span class="pub-tag">Image Segmentation</span>
+            </div>
+            <button class="show-hide-btn" onclick="toggleContent(this, 'citation4')">Show Citation</button>
+            <div class="citation hidden-content" id="citation4">Johnson, R., Your Name, & Wang, L. (2023). Comparative Analysis of Deep Learning Techniques for Image Segmentation. IEEE Transactions on Image Processing, 32(4), 1245-1259. https://doi.org/10.xxxx/xxxxx</div>
+            <div class="pub-links">
+                <a href="#" class="pub-link">PDF</a>
+                <a href="#" class="pub-link">DOI</a>
+                <a href="#" class="pub-link">Supplementary Materials</a>
+            </div>
         </div>
     </div>
-</footer>
-
+    
+    <script>
+        function toggleContent(button, contentId) {
+            const content = document.getElementById(contentId);
+            const isHidden = content.classList.contains('hidden-content');
+            
+            if (isHidden) {
+                content.classList.remove('hidden-content');
+                button.textContent = 'Hide ' + button.textContent.split(' ')[1];
+            } else {
+                content.classList.add('hidden-content');
+                button.textContent = 'Show ' + button.textContent.split(' ')[1];
+            }
+        }
         
-        <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts -->
+        function filterPublications(type) {
+            // Update active button
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter publications
+            const publications = document.querySelectorAll('.publication');
+            publications.forEach(pub => {
+                if (type === 'all' || pub.dataset.type === type) {
+                    pub.style.display = 'block';
+                } else {
+                    pub.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
