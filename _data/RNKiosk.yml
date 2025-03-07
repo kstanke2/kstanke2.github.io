@@ -1,0 +1,20 @@
+intro: |-
+
+  Bridging research and real-world impact, my extension work focuses on creating inclusive, data-driven educational initiatives that empower educators, students, and communities with the tools to navigate and thrive in an increasingly computational world.
+
+  ## Data Literacy at Raising Nebraska
+items:
+  - title: Data Literacy at Raising Nebraska
+    subtitle: Kiosk Exhibit - Overhaul and Implementation, July 2024
+    description: |-
+      This Data Kiosk, hosted at Raising Nebraska in Grand Island, NE, is a bilingual, interactive exhibit designed to enhance data literacy by engaging visitors in critical thinking about agricultural, environmental, and demographic data, fostering a deeper understanding of how data shapes our communities and daily lives.
+    features:
+      - Bilingual [English, Spanish]
+      - Data Focused
+      - Updated Data
+    features_styles: is-centered is-outlined is-primary
+    image: /images/RNKioskPicture.jpg
+    image_ratio: is-4by3
+    link: https://www.raisingnebraska.net/
+    link_text: Check Out Raising Nebraska Resources
+    tags: Extension,Data Litearcy,Inclusive Design

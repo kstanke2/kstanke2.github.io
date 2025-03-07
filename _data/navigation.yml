@@ -23,3 +23,8 @@
   #    link: /data-stories
   #  - name: Input-Output
   #    link: /input-output
+- name: Extension
+  link: /extension-showcase
+  #dropdown:
+  #  - name: Data Literacy at Raising Nebraska
+  #    link: /data-literacy-at-raising-nebraska
