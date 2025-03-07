@@ -1,12 +1,8 @@
 ---
 layout: page
 title: "About Me"
-subtitle: "A subtitle?"
+subtitle: "Inclusive | Innovative | Equity-Focused | Student-Centered | STEM Educator"
 hero_height: is-small
 ---
 
-# Things about me
-
-Some content about me or not? Or Yes
-
-Or no...
+This site is dedicated to my creative and academic works.

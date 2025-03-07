@@ -85,34 +85,24 @@
                         
                     
                         
-                            <div class="navbar-item has-dropdown is-hoverable ">
-                                <a
-                                    href="/courses"
-                                    class="navbar-link "
-                                >Courses</a>
-                                <div class="navbar-dropdown">
-                                    
-                                        <a
-                                            href="/unl-stat-462"
-                                            class="navbar-item "
-                                        >STAT 462</a>
-                                    
-                                </div>
-                            </div>
+                            <a
+                                href="/courses"
+                                class="navbar-item "
+                            >Courses</a>
                         
                     
                         
                             <div class="navbar-item has-dropdown is-hoverable ">
                                 <a
-                                    href="/projects"
+                                    href="/data-driven"
                                     class="navbar-link "
-                                >Projects</a>
+                                >Data Driven</a>
                                 <div class="navbar-dropdown">
                                     
                                         <a
-                                            href="/click2science"
+                                            href="/market"
                                             class="navbar-item "
-                                        >Click2Science</a>
+                                        >MARKET</a>
                                     
                                 </div>
                             </div>
@@ -127,6 +117,20 @@
         </div>
     </div>
 </nav>
+
+        
+            <section
+    class="hero  is-small  is-bold is-primary"
+    
+>
+    <div class="hero-body ">
+        <div class="container">
+            <h1 class="title is-2">Publications</h1>
+            <p class="subtitle is-3"></p>
+            
+        </div>
+    </div>
+</section>
 
         
         
@@ -151,7 +155,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Publications</title>
+    <title>Kimberly M. Stanke - Publications</title>
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -380,116 +384,149 @@
 </head>
 <body>
     <header>
-        <h1>Publications</h1>
-        <p class="intro">My research focuses on innovative approaches to [your research area]. Below you'll find my published work, including journal articles, conference papers, and book chapters.</p>
+        <p class="intro">My research focuses on innovative approaches in microbiology, cancer biology, and educational methods. Below you'll find my published work in journals and other scientific publications.</p>
     </header>
     
     <div class="filters">
         <button class="filter-btn active" onclick="filterPublications('all')">All Publications</button>
         <button class="filter-btn" onclick="filterPublications('journal')">Journal Articles</button>
-        <button class="filter-btn" onclick="filterPublications('conference')">Conference Papers</button>
-        <button class="filter-btn" onclick="filterPublications('book')">Book Chapters</button>
+        <button class="filter-btn" onclick="filterPublications('methods')">Methods</button>
+        <button class="filter-btn" onclick="filterPublications('education')">Education</button>
     </div>
     
     <div class="year-divider">
-        <span>2024</span>
+        <span>2022</span>
     </div>
     
     <div class="publications-container">
-        <!-- Example Publication 1 -->
+        <!-- Publication 1 -->
         <div class="publication" data-type="journal">
-            <div class="pub-title">Novel Approach to Machine Learning in Healthcare: A Longitudinal Study</div>
-            <div class="pub-authors"><span class="highlight">Your Name</span>, Jane Smith, John Doe</div>
-            <div class="pub-journal">Journal of Medical Informatics (2024) | Vol. 56, pp. 203-215</div>
+            <div class="pub-title">Improving Taxonomic Delimitation of Fungal Species in the Age of Genomics and Phenomics</div>
+            <div class="pub-authors">Stengel, Ashley, <span class="highlight">Kimberly M. Stanke</span>, Amanda Quattrone, and Joshua R. Herr</div>
+            <div class="pub-journal">Frontiers in Microbiology Evolutionary and Genomic Microbiology 13 (2022)</div>
             <button class="show-hide-btn" onclick="toggleContent(this, 'abstract1')">Show Abstract</button>
             <div class="pub-abstract hidden-content" id="abstract1">
-                This paper presents a novel machine learning approach for predicting patient outcomes in critical care settings. Using a combination of structured and unstructured data from electronic health records, we develop a model that outperforms existing methods by a substantial margin. Our approach incorporates temporal dynamics and addresses missing data challenges inherent in clinical datasets.
+                XXXXX
             </div>
             <div class="pub-meta">
-                <span class="pub-tag">Machine Learning</span>
-                <span class="pub-tag">Healthcare</span>
-                <span class="pub-tag">Predictive Modeling</span>
+                <span class="pub-tag">Fungi</span>
+                <span class="pub-tag">Genomics</span>
+                <span class="pub-tag">Taxonomy</span>
+                <span class="pub-tag">Phenomics</span>
             </div>
             <button class="show-hide-btn" onclick="toggleContent(this, 'citation1')">Show Citation</button>
-            <div class="citation hidden-content" id="citation1">Your Name, Smith, J., & Doe, J. (2024). Novel Approach to Machine Learning in Healthcare: A Longitudinal Study. Journal of Medical Informatics, 56, 203-215. https://doi.org/10.xxxx/xxxxx</div>
+            <div class="citation hidden-content" id="citation1">Stengel, A., Stanke, K. M., Quattrone, A., & Herr, J. R. (2022). Improving Taxonomic Delimitation of Fungal Species in the Age of Genomics and Phenomics. Frontiers in Microbiology Evolutionary and Genomic Microbiology, 13.</div>
             <div class="pub-links">
-                <a href="#" class="pub-link">PDF</a>
+                <a href="https://www.frontiersin.org/journals/microbiology" class="pub-link">Journal</a>
                 <a href="#" class="pub-link">DOI</a>
-                <a href="#" class="pub-link">Code Repository</a>
             </div>
         </div>
         
-        <!-- Example Publication 2 -->
-        <div class="publication" data-type="conference">
-            <div class="pub-title">Innovative Framework for Real-Time Data Processing in IoT Environments</div>
-            <div class="pub-authors">Jane Smith, <span class="highlight">Your Name</span>, Robert Johnson</div>
-            <div class="pub-journal">Proceedings of the International Conference on IoT Applications (ICIA 2024), pp. 78-92</div>
-            <button class="show-hide-btn" onclick="toggleContent(this, 'abstract2')">Show Abstract</button>
-            <div class="pub-abstract hidden-content" id="abstract2">
-                This paper introduces an innovative framework for processing real-time data in Internet of Things (IoT) environments. The proposed system optimizes resource allocation while maintaining low latency, making it suitable for edge computing applications. We demonstrate the framework's effectiveness through extensive evaluations on three different IoT testbeds.
+        <!-- Publication 3 -->
+        <div class="publication" data-type="methods">
+            <div class="pub-title">Direct-Contact Co-culture of Astrocytes and Glioblastoma Cells Patterned Using Polyelectrolyte Multilayer Templates</div>
+            <div class="pub-authors"><span class="highlight">Stanke, Kimberly M.</span> and Srivatsan Kidambi</div>
+            <div class="pub-journal">Journal of Visualized Experiments (2022)</div>
+            <button class="show-hide-btn" onclick="toggleContent(this, 'abstract3')">Show Abstract</button>
+            <div class="pub-abstract hidden-content" id="abstract3">
+                XXXXX
             </div>
             <div class="pub-meta">
-                <span class="pub-tag">IoT</span>
-                <span class="pub-tag">Edge Computing</span>
-                <span class="pub-tag">Real-Time Systems</span>
+                <span class="pub-tag">Co-culture</span>
+                <span class="pub-tag">Astrocytes</span>
+                <span class="pub-tag">Glioblastoma</span>
+                <span class="pub-tag">Polyelectrolyte</span>
+                <span class="pub-tag">Methods</span>
             </div>
-            <button class="show-hide-btn" onclick="toggleContent(this, 'citation2')">Show Citation</button>
-            <div class="citation hidden-content" id="citation2">Smith, J., Your Name, & Johnson, R. (2024). Innovative Framework for Real-Time Data Processing in IoT Environments. In Proceedings of the International Conference on IoT Applications (pp. 78-92). IEEE.</div>
+            <button class="show-hide-btn" onclick="toggleContent(this, 'citation3')">Show Citation</button>
+            <div class="citation hidden-content" id="citation3">Stanke, K. M., & Kidambi, S. (2022). Direct-Contact Co-culture of Astrocytes and Glioblastoma Cells Patterned Using Polyelectrolyte Multilayer Templates. Journal of Visualized Experiments.</div>
             <div class="pub-links">
-                <a href="#" class="pub-link">PDF</a>
-                <a href="#" class="pub-link">Slides</a>
-                <a href="#" class="pub-link">Code Repository</a>
+                <a href="https://www.jove.com/" class="pub-link">Journal</a>
+                <a href="#" class="pub-link">DOI</a>
+                <a href="#" class="pub-link">Video Protocol</a>
             </div>
         </div>
     </div>
     
     <div class="year-divider">
-        <span>2023</span>
+        <span>2021</span>
     </div>
     
     <div class="publications-container">
-        <!-- Example Publication 3 -->
-        <div class="publication" data-type="book">
-            <div class="pub-title">Advanced Methods in Data Science: Theory and Applications</div>
-            <div class="pub-authors"><span class="highlight">Your Name</span>, Emily Chen (Eds.)</div>
-            <div class="pub-journal">Springer Publishing (2023) | Chapter 7: Advancements in Natural Language Processing, pp. 143-172</div>
-            <button class="show-hide-btn" onclick="toggleContent(this, 'abstract3')">Show Abstract</button>
-            <div class="pub-abstract hidden-content" id="abstract3">
-                This chapter provides a comprehensive overview of recent advancements in Natural Language Processing (NLP). It covers transformer-based architectures, few-shot learning, and interpretability methods. The chapter also includes a detailed case study on applying these techniques to sentiment analysis in social media data.
+        <!-- Publication 2 -->
+        <div class="publication" data-type="education">
+            <div class="pub-title">Virtually engaging students through collaborative investigation of scientific literature, a case study</div>
+            <div class="pub-authors">Stengel, Ashley, <span class="highlight">Kimberly M. Stanke</span>, Morgan R. McPherson, and Rhae A. Drijber</div>
+            <div class="pub-journal">Natural Sciences Education 50, no. 1 (2021): e20051</div>
+            <button class="show-hide-btn" onclick="toggleContent(this, 'abstract2')">Show Abstract</button>
+            <div class="pub-abstract hidden-content" id="abstract2">
+                XXXXX
             </div>
             <div class="pub-meta">
-                <span class="pub-tag">Natural Language Processing</span>
-                <span class="pub-tag">Transformers</span>
-                <span class="pub-tag">Book Chapter</span>
+                <span class="pub-tag">Education</span>
+                <span class="pub-tag">Virtual Learning</span>
+                <span class="pub-tag">Scientific Literature</span>
+                <span class="pub-tag">Collaboration</span>
             </div>
-            <button class="show-hide-btn" onclick="toggleContent(this, 'citation3')">Show Citation</button>
-            <div class="citation hidden-content" id="citation3">Your Name & Chen, E. (2023). Advancements in Natural Language Processing. In Your Name & E. Chen (Eds.), Advanced Methods in Data Science: Theory and Applications (pp. 143-172). Springer.</div>
+            <button class="show-hide-btn" onclick="toggleContent(this, 'citation2')">Show Citation</button>
+            <div class="citation hidden-content" id="citation2">Stengel, A., Stanke, K. M., McPherson, M. R., & Drijber, R. A. (2021). Virtually engaging students through collaborative investigation of scientific literature, a case study. Natural Sciences Education, 50(1), e20051.</div>
             <div class="pub-links">
-                <a href="#" class="pub-link">Publisher Link</a>
-                <a href="#" class="pub-link">Author Preprint</a>
+                <a href="https://acsess.onlinelibrary.wiley.com/journal/21688281" class="pub-link">Journal</a>
+                <a href="#" class="pub-link">DOI</a>
             </div>
         </div>
         
-        <!-- Example Publication 4 -->
+        <!-- Publication 4 -->
         <div class="publication" data-type="journal">
-            <div class="pub-title">Comparative Analysis of Deep Learning Techniques for Image Segmentation</div>
-            <div class="pub-authors">Robert Johnson, <span class="highlight">Your Name</span>, Lisa Wang</div>
-            <div class="pub-journal">IEEE Transactions on Image Processing (2023) | Vol. 32, No. 4, pp. 1245-1259</div>
+            <div class="pub-title">High Expression of Glycolytic Genes in Clinical Glioblastoma Patients Correlates with Lower Survival</div>
+            <div class="pub-authors"><span class="highlight">Stanke, Kimberly M.</span>, Carrick Wilson, and Srivatsan Kidambi</div>
+            <div class="pub-journal">Frontiers in Molecular Biosciences 8 (2021)</div>
             <button class="show-hide-btn" onclick="toggleContent(this, 'abstract4')">Show Abstract</button>
             <div class="pub-abstract hidden-content" id="abstract4">
-                In this paper, we present a comprehensive comparative analysis of state-of-the-art deep learning techniques for image segmentation. We evaluate performance across multiple datasets and introduce a novel hybrid approach that combines the strengths of U-Net and Transformer architectures. Our experiments demonstrate significant improvements in segmentation accuracy while maintaining computational efficiency.
+                XXXXX
             </div>
             <div class="pub-meta">
-                <span class="pub-tag">Computer Vision</span>
-                <span class="pub-tag">Deep Learning</span>
-                <span class="pub-tag">Image Segmentation</span>
+                <span class="pub-tag">Glioblastoma</span>
+                <span class="pub-tag">Glycolysis</span>
+                <span class="pub-tag">Gene Expression</span>
+                <span class="pub-tag">Cancer</span>
+                <span class="pub-tag">Survival</span>
             </div>
             <button class="show-hide-btn" onclick="toggleContent(this, 'citation4')">Show Citation</button>
-            <div class="citation hidden-content" id="citation4">Johnson, R., Your Name, & Wang, L. (2023). Comparative Analysis of Deep Learning Techniques for Image Segmentation. IEEE Transactions on Image Processing, 32(4), 1245-1259. https://doi.org/10.xxxx/xxxxx</div>
+            <div class="citation hidden-content" id="citation4">Stanke, K. M., Wilson, C., & Kidambi, S. (2021). High Expression of Glycolytic Genes in Clinical Glioblastoma Patients Correlates with Lower Survival. Frontiers in Molecular Biosciences, 8.</div>
             <div class="pub-links">
-                <a href="#" class="pub-link">PDF</a>
+                <a href="https://www.frontiersin.org/journals/molecular-biosciences" class="pub-link">Journal</a>
                 <a href="#" class="pub-link">DOI</a>
-                <a href="#" class="pub-link">Supplementary Materials</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="year-divider">
+        <span>2019</span>
+    </div>
+    
+    <div class="publications-container">
+        <!-- Publication 5 -->
+        <div class="publication" data-type="journal">
+            <div class="pub-title">Depletion of mitochondrial protease OMA1 alters proliferative properties and promotes metastatic growth of breast cancer cells</div>
+            <div class="pub-authors">Daverey, Amita, Roman M. Levytskyy, <span class="highlight">Kimberly M. Stanke</span>, Martonio Ponte Viana, Samantha Swenson, Stephen L. Hayward, Madhusudhanan Narasimhan, Oleh Khalimonchuk, and Srivatsan Kidambi</div>
+            <div class="pub-journal">Scientific reports 9, no. 1 (2019): 1-15</div>
+            <button class="show-hide-btn" onclick="toggleContent(this, 'abstract5')">Show Abstract</button>
+            <div class="pub-abstract hidden-content" id="abstract5">
+                XXXXX
+            </div>
+            <div class="pub-meta">
+                <span class="pub-tag">Breast Cancer</span>
+                <span class="pub-tag">Mitochondria</span>
+                <span class="pub-tag">OMA1</span>
+                <span class="pub-tag">Metastasis</span>
+                <span class="pub-tag">Cell Proliferation</span>
+            </div>
+            <button class="show-hide-btn" onclick="toggleContent(this, 'citation5')">Show Citation</button>
+            <div class="citation hidden-content" id="citation5">Daverey, A., Levytskyy, R. M., Stanke, K. M., Viana, M. P., Swenson, S., Hayward, S. L., Narasimhan, M., Khalimonchuk, O., & Kidambi, S. (2019). Depletion of mitochondrial protease OMA1 alters proliferative properties and promotes metastatic growth of breast cancer cells. Scientific reports, 9(1), 1-15.</div>
+            <div class="pub-links">
+                <a href="https://www.nature.com/srep/" class="pub-link">Journal</a>
+                <a href="#" class="pub-link">DOI</a>
             </div>
         </div>
     </div>
@@ -527,7 +564,6 @@
     </script>
 </body>
 </html>
-
 </div>
 
                     </div>

@@ -2,11 +2,24 @@
   link: /publications
 - name: Courses
   link: /courses
+#  dropdown:
+#    - name: STAT 462
+#      link: /unl-stat-462
+#- name: Projects
+#  link: /projects
+#  dropdown:
+#    - name: Click2Science
+#      link: /click2science
+- name: Data Driven
+  link: /data-driven
   dropdown:
-    - name: STAT 462
-      link: /unl-stat-462
-- name: Projects
-  link: /projects
-  dropdown:
-    - name: Click2Science
-      link: /click2science
+    - name: MARKET
+      link: /market
+  #  - name: Bayesian Circus
+  #    link: /bayesian-circus
+  #  - name: Game Design
+  #    link: /game-design
+  #  - name: Data Stories
+  #    link: /data-stories
+  #  - name: Input-Output
+  #    link: /input-output
