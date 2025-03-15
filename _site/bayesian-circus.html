@@ -1,0 +1,386 @@
+<!doctype html>
+
+
+
+
+<html
+    dir="ltr"
+    lang="en"
+    
+        class="has-navbar-fixed-top"
+    
+>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link
+        rel="shortcut icon"
+        type="image/png"
+        
+            href="/favicon.png"
+        
+    >
+    <script defer src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-social@1/bin/bulma-social.min.css">
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Bayesian Circus | Kimberly Stanke, Ph.D.</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Bayesian Circus" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A space for musings, creative works, and a record of my professional journey." />
+<meta property="og:description" content="A space for musings, creative works, and a record of my professional journey." />
+<link rel="canonical" href="http://localhost:4000/bayesian-circus" />
+<meta property="og:url" content="http://localhost:4000/bayesian-circus" />
+<meta property="og:site_name" content="Kimberly Stanke, Ph.D." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Bayesian Circus" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"A space for musings, creative works, and a record of my professional journey.","headline":"Bayesian Circus","url":"http://localhost:4000/bayesian-circus"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- head scripts -->
+</head>
+
+    <body>
+        
+        <nav
+    class="navbar is-primary  is-fixed-top "
+    x-data="{ openNav: false }"
+>
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item">
+                Kimberly Stanke, Ph.D.
+            </a>
+            <a
+                role="button"
+                class="navbar-burger burger"
+                aria-label="menu"
+                aria-expanded="false"
+                data-target="navMenu"
+                :class="{ 'is-active': openNav }"
+                x-on:click="openNav = !openNav"
+            >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+            <div class="navbar-start">
+                <a href="/" class="navbar-item ">Home</a>
+                
+                    
+                        
+                            <a
+                                href="/publications"
+                                class="navbar-item "
+                            >Publications</a>
+                        
+                    
+                        
+                            <a
+                                href="/courses"
+                                class="navbar-item "
+                            >Courses</a>
+                        
+                    
+                        
+                            <div class="navbar-item has-dropdown is-hoverable ">
+                                <a
+                                    href="/data-driven"
+                                    class="navbar-link "
+                                >Data Driven</a>
+                                <div class="navbar-dropdown">
+                                    
+                                        <a
+                                            href="/market"
+                                            class="navbar-item "
+                                        >MARKET</a>
+                                    
+                                        <a
+                                            href="/bayesian-circus"
+                                            class="navbar-item is-active"
+                                        >Bayesian Circus</a>
+                                    
+                                        <a
+                                            href="/data-stories"
+                                            class="navbar-item "
+                                        >Data Stories</a>
+                                    
+                                </div>
+                            </div>
+                        
+                    
+                        
+                            <a
+                                href="/extension-showcase"
+                                class="navbar-item "
+                            >Extension</a>
+                        
+                    
+                
+            </div>
+
+            <div class="navbar-end">
+                
+            </div>
+        </div>
+    </div>
+</nav>
+
+        
+        
+
+        <section class="section">
+            <div class="container">
+                <div class="columns is-multiline">
+                    
+                    <div class="column is-12">
+                        
+
+                        
+
+                        
+
+                        
+
+                        
+<div class="content">
+    <h1 id="-bayesian-circus-iterative-guessing-challenge-">🎪 Bayesian Circus: Iterative Guessing Challenge 🎲</h1>
+
+<h2 id="can-you-infer-the-true-population-from-limited-data"><strong>Can You Infer the True Population from Limited Data?</strong></h2>
+
+<p>Welcome to <strong>Bayesian Circus</strong>, where your job is to <strong>estimate the true distribution of colors in two mystery jars (Jar A &amp; Jar B)</strong> using probability, logic, and strategic guessing.</p>
+
+<p>This game follows a <strong>strict time limit per round</strong>, and you will <strong>track not just your best estimate, but also a confidence interval (+/- range) for each color</strong>.<br />
+Your goal is to <strong>refine your estimates as accurately as possible while avoiding overcorrection</strong>.</p>
+
+<p>🏆 <strong>Points are awarded based on accuracy and how well you adjust over time.</strong></p>
+
+<hr />
+
+<h2 id="-game-objective"><strong>📌 Game Objective</strong></h2>
+
+<p>Your goal is to estimate the <strong>percentage of each color</strong> in <strong>Jars A &amp; B</strong> by progressively updating your guesses as <strong>sample data</strong> is revealed.</p>
+
+<ul>
+  <li>Each round, a <strong>new sample jar</strong> and associated counts will be revealed to all participants.</li>
+  <li>You must <strong>update your probability estimates</strong> for both Jars A &amp; B within a <strong>strict time limit</strong>.</li>
+  <li>You must also provide a <strong>confidence interval (+/- range)</strong> to show how certain you are about each estimate.</li>
+  <li><strong>Overcorrecting by more than the allowed percentage results in a penalty.</strong></li>
+</ul>
+
+<p>🧐 <strong>Think carefully!</strong> Each sample gives you a <strong>better picture</strong> of the whole, but you <strong>never get to see the entire population!</strong> Your job is to <strong>make smart, measured updates</strong> as you receive more information.</p>
+
+<hr />
+
+<h2 id="-how-confidence-intervals-work"><strong>📝 How Confidence Intervals Work</strong></h2>
+
+<p>For each color estimate, you must <strong>include a confidence interval</strong>—a range that reflects how <strong>sure</strong> you are about your estimate.</p>
+
+<ul>
+  <li>A <strong>wide range (e.g., 30% ±15%)</strong> means <strong>you are unsure</strong> and allowing for more error.</li>
+  <li>A <strong>small range (e.g., 30% ±3%)</strong> means <strong>you are confident</strong> in your estimate.</li>
+  <li><strong>As you get more data, your confidence interval should narrow!</strong></li>
+</ul>
+
+<hr />
+
+<h2 id="-game-rules--step-by-step-guide"><strong>📝 Game Rules &amp; Step-by-Step Guide</strong></h2>
+
+<h3 id="-step-1-initial-guess-prior-belief---no-data-yet"><strong>🔹 Step 1: Initial Guess (Prior Belief - No Data Yet)</strong></h3>
+
+<ol>
+  <li>You will receive a <strong>Guessing Sheet</strong> listing <strong>Jar A and Jar B</strong>.</li>
+  <li><strong>Without any data</strong>, you must <strong>estimate the percentage of each color</strong> in both jars.</li>
+  <li>You must also provide a <strong>confidence interval</strong> (<strong>+/- range</strong>) for each color, representing your uncertainty.
+    <ul>
+      <li>Example Guesses:
+        <ul>
+          <li><strong>Jar A Guess:</strong> 30% Green (<strong>±10%</strong>), 25% Red (<strong>±5%</strong>), 15% Yellow (<strong>±15%</strong>)…</li>
+          <li><strong>Jar B Guess:</strong> 40% Yellow (<strong>±10%</strong>), 20% Red (<strong>±8%</strong>), 15% Green (<strong>±12%</strong>)…</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>You have <strong>2 minutes</strong> to submit your guesses before the round closes.</li>
+</ol>
+
+<hr />
+
+<h3 id="-step-2-small-sample-first-data-revealed"><strong>🔹 Step 2: Small Sample (First Data Revealed)</strong></h3>
+
+<ol>
+  <li>A <strong>pre-filled small sample</strong> is revealed for <strong>Jar A and Jar B</strong>.</li>
+  <li>The <strong>exact counts</strong> for each color in the sample will be displayed for all participants.</li>
+  <li>You must now <strong>revise your estimates</strong> for Jar A and Jar B based on the new data.</li>
+  <li>Again, provide an updated <strong>confidence interval</strong> for each color.</li>
+  <li>You have <strong>2 minutes</strong> to submit your updated guesses.</li>
+</ol>
+
+<hr />
+
+<h3 id="-step-3-additional-small-sample"><strong>🔹 Step 3: Additional Small Sample</strong></h3>
+
+<ol>
+  <li>A <strong>second small sample</strong> is revealed for each jar.</li>
+  <li>The <strong>exact counts</strong> for each color in the sample will be displayed for all participants.</li>
+  <li>You <strong>update your estimates and confidence intervals</strong> based on this second sample.</li>
+  <li><strong>Overcorrection penalty applies:</strong>
+    <ul>
+      <li>If your new estimate <strong>changes by more than 20% from the previous round</strong>, a <strong>penalty</strong> will be applied unless your final estimate is the closest to the true answer.</li>
+    </ul>
+  </li>
+  <li>You have <strong>2 minutes</strong> to submit your updated guesses.</li>
+</ol>
+
+<hr />
+
+<h3 id="-step-4-medium-sample"><strong>🔹 Step 4: Medium Sample</strong></h3>
+
+<ol>
+  <li>A <strong>medium sample</strong> is revealed from <strong>each jar</strong>.</li>
+  <li>Participants update their guesses <strong>again</strong>, refining both their estimates and confidence intervals.</li>
+  <li>Overcorrection penalties <strong>still apply</strong> if estimates swing too much, but now the limit is <strong>10%</strong>.</li>
+  <li>You have <strong>2 minutes</strong> to submit your updated guesses.</li>
+</ol>
+
+<hr />
+
+<h3 id="-step-5-larger-data-release"><strong>🔹 Step 5: Larger Data Release</strong></h3>
+
+<ol>
+  <li>Three <strong>more</strong> medium sample jars are revealed for each population.</li>
+  <li>Participants must now refine their guesses and <strong>narrow their confidence intervals</strong> as the data becomes clearer.</li>
+  <li><strong>Penalty for overcorrection still applies, and is now set at 5%</strong></li>
+  <li><strong>3 minutes</strong> are given for updates before the round closes.</li>
+</ol>
+
+<hr />
+
+<h3 id="-step-6-final-round"><strong>🔹 Step 6: Final Round</strong></h3>
+
+<ol>
+  <li>A <strong>large final sample</strong> is revealed for each population.</li>
+  <li>Participants submit their <strong>final estimates</strong> and <strong>confidence intervals</strong>.</li>
+  <li><strong>Final scores are calculated.</strong></li>
+</ol>
+
+<hr />
+
+<h2 id="-overcorrection-penalty-system"><strong>🚨 Overcorrection Penalty System</strong></h2>
+
+<p>🔺 If you <strong>change your estimate by more than the allowed percentage</strong>, you will receive a <strong>penalty</strong> unless your final guess is within <strong>2% of the true proportion</strong>.</p>
+
+<ul>
+  <li><strong>Rounds 1-3:</strong> Max correction = <strong>20%</strong></li>
+  <li><strong>Round 4:</strong> Max correction = <strong>10%</strong></li>
+  <li><strong>Round 5:</strong> Max correction = <strong>5%</strong></li>
+</ul>
+
+<p>This penalty encourages <strong>small, logical updates</strong> instead of wild swings!</p>
+
+<hr />
+
+<h2 id="-strategy-tips-for-participants"><strong>💡 Strategy Tips for Participants</strong></h2>
+
+<p>✔️ <strong>Avoid overcorrection!</strong> Bayesian updating is about small, rational adjustments.<br />
+✔️ <strong>Confidence intervals matter!</strong> If you’re consistently narrowing your range, you’re improving.<br />
+✔️ <strong>Pay attention to stabilization!</strong> If a color’s proportion isn’t changing much, it’s likely close to correct.<br />
+✔️ <strong>Use the medium and large samples wisely!</strong> They provide stronger data for accurate guessing.</p>
+
+<hr />
+
+<h2 id="-game-flow"><strong>📅 Game Flow</strong></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Round</strong></th>
+      <th><strong>Action</strong></th>
+      <th><strong>Time Limit</strong></th>
+      <th><strong>Penalty for Overcorrection?</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1</strong></td>
+      <td>Initial Blind Guess</td>
+      <td>2 min</td>
+      <td>❌ No</td>
+    </tr>
+    <tr>
+      <td><strong>2</strong></td>
+      <td>Reveal Small Sample</td>
+      <td>2 min</td>
+      <td>✅ 20%</td>
+    </tr>
+    <tr>
+      <td><strong>3</strong></td>
+      <td>Reveal Another Small Sample</td>
+      <td>2 min</td>
+      <td>✅ 20%</td>
+    </tr>
+    <tr>
+      <td><strong>4</strong></td>
+      <td>Reveal Medium Sample</td>
+      <td>2 min</td>
+      <td>✅ 10%</td>
+    </tr>
+    <tr>
+      <td><strong>5</strong></td>
+      <td>Reveal Three More Medium Samples</td>
+      <td>3 min</td>
+      <td>✅ 5%</td>
+    </tr>
+    <tr>
+      <td><strong>6</strong></td>
+      <td>Reveal Final Large Sample</td>
+      <td>3 min</td>
+      <td>❌ No</td>
+    </tr>
+    <tr>
+      <td><strong>7</strong></td>
+      <td>Final Scoring &amp; Leaderboard</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-final-notes"><strong>📋 Final Notes</strong></h2>
+
+<p>🏆 <strong>Will your estimates converge on the truth, or will overcorrection lead you astray?</strong><br />
+🎯 <strong>Think carefully, update wisely, and trust the data!</strong></p>
+
+</div>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        
+            <footer class="footer">
+    <div class="container">
+        
+
+        <div class="content is-small has-text-centered">
+            <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+        </div>
+    </div>
+</footer>
+
+        
+        <script src="/assets/js/app.js" type="text/javascript"></script><!-- footer scripts -->
+</body>
+</html>

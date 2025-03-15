@@ -15,8 +15,8 @@
   dropdown:
     - name: MARKET
       link: /market
-    #  - name: Bayesian Circus
-    #    link: /bayesian-circus
+    - name: Bayesian Circus
+      link: /bayesian-circus
     #  - name: Game Design
     #    link: /game-design
     - name: Data Stories
