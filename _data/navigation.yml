@@ -15,12 +15,12 @@
   dropdown:
     - name: MARKET
       link: /market
-  #  - name: Bayesian Circus
-  #    link: /bayesian-circus
-  #  - name: Game Design
-  #    link: /game-design
-  #  - name: Data Stories
-  #    link: /data-stories
+    #  - name: Bayesian Circus
+    #    link: /bayesian-circus
+    #  - name: Game Design
+    #    link: /game-design
+    - name: Data Stories
+      link: /data-stories
   #  - name: Input-Output
   #    link: /input-output
 - name: Extension
