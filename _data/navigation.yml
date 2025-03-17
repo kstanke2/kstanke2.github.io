@@ -17,8 +17,8 @@
       link: /market
     - name: Bayesian Circus
       link: /bayesian-circus
-    #  - name: Game Design
-    #    link: /game-design
+    - name: Game Design
+      link: /game-design
     - name: Data Stories
       link: /data-stories
   #  - name: Input-Output

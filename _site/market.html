@@ -110,6 +110,11 @@
                                         >Bayesian Circus</a>
                                     
                                         <a
+                                            href="/game-design"
+                                            class="navbar-item "
+                                        >Game Design</a>
+                                    
+                                        <a
                                             href="/data-stories"
                                             class="navbar-item "
                                         >Data Stories</a>
@@ -153,748 +158,195 @@
 
                         
 <div class="content">
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <title>MARKET Return</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-      text-align: center;
-      background-color: #f5f5f5;
-    }
-    
-    h1 {
-      color: #333;
-    }
-    
-    .container {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-    }
-    
-    .column {
-      flex: 1;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    .dice-container, .slot-container {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin: 30px 0;
-    }
-    
-    .dice {
-      width: 100px;
-      height: 100px;
-      background-color: white;
-      border-radius: 10px;
-      border: 2px solid #333;
-      overflow: hidden;
-      position: relative;
-    }
+    <h1 id="-market-the-probability--risk-management-challenge-">🏦 MARKET: The Probability &amp; Risk Management Challenge 🎲</h1>
 
-    .centered-controls {
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-}
+<h2 id="-overview"><strong>📌 Overview</strong></h2>
 
-    .slot {
-      width: 200px;
-      height: 100px;
-      background-color: white;
-      border-radius: 10px;
-      border: 2px solid #333;
-      overflow: hidden;
-      position: relative;
-    }
-    
-    .dice-strip, .slot-strip {
-      position: absolute;
-      width: 100%;
-      height: 1800px; /* Increased height for more repetitions */
-      transition: top 2s ease-out; /* Increased duration */
-      top: 0;
-    }
-    
-    .dice-face {
-      width: 100px;
-      height: 100px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 40px;
-      font-weight: bold;
-    }
+<p>Welcome to <strong>MARKET</strong>, a high-stakes game where <strong>probability and risk management</strong> determine your success!</p>
 
-    .slot-face {
-      width: 200px;
-      height: 100px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 40px;
-      font-weight: bold;
-    }
-    
-    .slot-face.boon {
-      background-color: black;
-      color: white;
-    }
-    
-    .slot-face.neutral {
-      background-color: blue;
-      color: white;
-    }
-    
-    .slot-face.bust {
-      background-color: red;
-      color: white;
-    }
-    
-    .controls {
-      margin: 20px 0;
-    }
-    
-    button {
-      background-color: #4CAF50;
-      border: none;
-      color: white;
-      padding: 10px 20px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    
-    button:hover {
-      background-color: #45a049;
-    }
-    
-    button#reset {
-      background-color: #f44336;
-    }
-    
-    button#reset:hover {
-      background-color: #d32f2f;
-    }
-    
-    .result {
-      font-size: 24px;
-      margin: 20px 0;
-    }
-    
-    .history {
-      border: 1px solid #ddd;
-      padding: 10px;
-      max-height: 200px;
-      overflow-y: auto;
-      margin: 20px auto;
-      width: 80%;
-      background-color: white;
-      text-align: left;
-    }
-    
-    .history-item {
-      margin: 5px 0;
-      padding: 5px;
-      border-bottom: 1px solid #eee;
-    }
+<p>Your goal is to <strong>accumulate the highest average team score</strong> by strategically deciding when to <strong>test the market (roll)</strong> and when to <strong>play it safe</strong>. However, <strong>market conditions fluctuate</strong>, and a single risky decision could wipe out your points!</p>
 
-    table {
-  width: 100%;
-  border-collapse: collapse;
-}
+<h4 id="to-practice-dice-mechanics-visit-market-practice-page">To practice dice mechanics, visit <a href="/market-practice">MARKET Practice page</a>.</h4>
 
-th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: center; /* Center horizontally */
-  vertical-align: middle; /* Center vertically */
-}
+<hr />
 
-th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-}
+<h2 id="-objective"><strong>🎯 Objective</strong></h2>
 
-    .highlight-red {
-  background-color: red;
-  color: white;
-    }
-    
-    .dot {
-      height: 18px;
-      width: 18px;
-      background-color: #333;
-      border-radius: 50%;
-      display: inline-block;
-    }
-    
-    .dice-dots {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
-      width: 100%;
-      height: 100%;
-      padding: 10px;
-      box-sizing: border-box;
-    }
-    
-    /* For dice face 1 */
-    .dots-1 .dot:nth-child(1) {
-      grid-column: 2;
-      grid-row: 2;
-    }
-    
-    /* For dice face 2 */
-    .dots-2 .dot:nth-child(1) {
-      grid-column: 1;
-      grid-row: 1;
-    }
-    .dots-2 .dot:nth-child(2) {
-      grid-column: 3;
-      grid-row: 3;
-    }
-    
-    /* For dice face 3 */
-    .dots-3 .dot:nth-child(1) {
-      grid-column: 1;
-      grid-row: 1;
-    }
-    .dots-3 .dot:nth-child(2) {
-      grid-column: 2;
-      grid-row: 2;
-    }
-    .dots-3 .dot:nth-child(3) {
-      grid-column: 3;
-      grid-row: 3;
-    }
-    
-    /* For dice face 4 */
-    .dots-4 .dot:nth-child(1) {
-      grid-column: 1;
-      grid-row: 1;
-    }
-    .dots-4 .dot:nth-child(2) {
-      grid-column: 3;
-      grid-row: 1;
-    }
-    .dots-4 .dot:nth-child(3) {
-      grid-column: 1;
-      grid-row: 3;
-    }
-    .dots-4 .dot:nth-child(4) {
-      grid-column: 3;
-      grid-row: 3;
-    }
-    
-    /* For dice face 5 */
-    .dots-5 .dot:nth-child(1) {
-      grid-column: 1;
-      grid-row: 1;
-    }
-    .dots-5 .dot:nth-child(2) {
-      grid-column: 3;
-      grid-row: 1;
-    }
-    .dots-5 .dot:nth-child(3) {
-      grid-column: 2;
-      grid-row: 2;
-    }
-    .dots-5 .dot:nth-child(4) {
-      grid-column: 1;
-      grid-row: 3;
-    }
-    .dots-5 .dot:nth-child(5) {
-      grid-column: 3;
-      grid-row: 3;
-    }
-    
-    /* For dice face 6 */
-    .dots-6 .dot:nth-child(1) {
-      grid-column: 1;
-      grid-row: 1;
-    }
-    .dots-6 .dot:nth-child(2) {
-      grid-column: 3;
-      grid-row: 1;
-    }
-    .dots-6 .dot:nth-child(3) {
-      grid-column: 1;
-      grid-row: 2;
-    }
-    .dots-6 .dot:nth-child(4) {
-      grid-column: 3;
-      grid-row: 2;
-    }
-    .dots-6 .dot:nth-child(5) {
-      grid-column: 1;
-      grid-row: 3;
-    }
-    .dots-6 .dot:nth-child(6) {
-      grid-column: 3;
-      grid-row: 3;
-    }
+<ul>
+  <li>Earn as many points as possible over <strong>six rounds</strong>.</li>
+  <li>Each round, decide whether to <strong>test the market (ROLL) or STAY</strong>.</li>
+  <li>Manage risk based on <strong>market conditions</strong> (<strong>Boon, Neutral, Bust</strong>).</li>
+  <li>The team with the <strong>highest average score at the end wins</strong>!</li>
+</ul>
 
-    .letter-block {
-      width: 80px;
-      height: 80px;
-      background-color: white;
-      border: 2px solid #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 58px;
-      font-weight: bold;
-      cursor: pointer;
-      margin: 0 5px;
-      margin-bottom: 10px;
-      transition: background-color 0.3s;
-    }
+<hr />
 
-    .letter-block.highlighted {
-      background-color: yellow;
-    }
+<h2 id="-how-to-play"><strong>🎲 How to Play</strong></h2>
 
-    #letters-container {
-  display: flex;
-  flex-direction: row; /* Arrange letter blocks horizontally */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  height: 100%; /* Ensure the container takes up the full height of the column */
-}
+<h3 id="1️⃣-market-conditions-are-set"><strong>1️⃣ Market Conditions Are Set</strong></h3>
 
-.market-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-}
+<p>At the start of <strong>each round</strong>, the <strong>Dice Master (DM)</strong> rolls a <strong>d3</strong> to determine the market condition:</p>
 
-.market-table th, .market-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: center; /* Center horizontally */
-  vertical-align: middle; /* Center vertically */
-}
+<table>
+  <thead>
+    <tr>
+      <th>🎲 <strong>Market Roll</strong></th>
+      <th><strong>Market Condition</strong></th>
+      <th><strong>Effect</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1</strong></td>
+      <td><strong>Bust</strong></td>
+      <td>All points this round <strong>decrease by 15%</strong>.</td>
+    </tr>
+    <tr>
+      <td><strong>2</strong></td>
+      <td><strong>Neutral</strong></td>
+      <td>No change—points remain as rolled.</td>
+    </tr>
+    <tr>
+      <td><strong>3</strong></td>
+      <td><strong>Boon</strong></td>
+      <td>All points this round <strong>increase by 35%</strong>.</td>
+    </tr>
+  </tbody>
+</table>
 
-.market-table th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-}
+<p>🔹 Each market condition has <strong>equal probability (1/3 chance)</strong> of occurring each round.</p>
 
-  </style>
-</head>
-<body>
+<hr />
 
-  <div id="letters-container">
-    <div class="letter-block" id="block-M">M</div>
-    <div class="letter-block" id="block-A">A</div>
-    <div class="letter-block" id="block-R">R</div>
-    <div class="letter-block" id="block-K">K</div>
-    <div class="letter-block" id="block-E">E</div>
-    <div class="letter-block" id="block-T">T</div>
-  </div>
+<h3 id="2️⃣-players-decide-to-test-the-market-or-stay"><strong>2️⃣ Players Decide to TEST THE MARKET or STAY</strong></h3>
 
-  <div class="container">
+<p>Each player on the team <strong>individually</strong> decides:</p>
 
-    <div class="column">
-        <h2>Instructions</h2>
-        <p>Click on the letter blocks to help you keep track of which stage you are on. </p>    
-        <p>Then, click the "Check Market Condition" button to spin the slot and determine the condition of the market. Each market condition applies a different multiplier to your profit for the round.</p>
-        <p>Finally, click the "Roll Dice" button to test the market and see the results.</p>
-        <p>You can choose to stop and walk away with your profits or to press your luck by rolling again. But, be aware, if a die shows a 1, your profits go to zero!</p>
-        <p>If you want to start over, just click "Reset Market."</p>
-    </div>
+<ul>
+  <li><strong>TEST THE MARKET 🎲</strong> – Participate in rolling <strong>two six-sided dice (2d6)</strong> to earn points.</li>
+  <li><strong>STAY ⏸</strong> – Lock in points from previous rolls in this round and <strong>avoid risk</strong>.</li>
+</ul>
 
-    <div class="column">
-      <h2>Condition</h2>
-      <div class="slot-container">
-        <div class="slot" id="slot1">
-          <div class="slot-strip" id="slot-strip1"></div>
-        </div>
-      </div>
-  
-      <div class="controls centered-controls">
-        <button id="spin">Check Market Condition</button>
-      </div>
-        <p>Each market condition has equal probability, but different profit multipliers.</p>
+<p><strong>⚠️ The Catch:</strong></p>
 
-        <table class="market-table">
-            <thead>
-              <tr>
-                <th>Market State</th>
-                <th>Probability</th>
-                <th>Multiplier</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Bust</td>
-                <td>1/3</td>
-                <td>0.85</td>
-              </tr>
-              <tr>
-                <td>Neutral</td>
-                <td>1/3</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>Boon</td>
-                <td>1/3</td>
-                <td>1.35</td>
-              </tr>
-            </tbody>
-          </table>
+<ul>
+  <li><strong>All players who decide to test the market roll the same 2d6 result</strong>—the market is shared!</li>
+  <li>If <strong>either die rolls a 1</strong>, the <strong>entire market scratches</strong> (earning <strong>0 points for the round</strong>) for anyone who choose to take the risk.</li>
+</ul>
 
+<p><strong>🔹 The dice roll independently and fairly.</strong></p>
 
-    </div>
-    
-    <div class="column">
-      <h2>Test the MARKET</h2>
-      <div class="dice-container">
-        <div class="dice" id="dice1">
-          <div class="dice-strip" id="strip1"></div>
-        </div>
-        <div class="dice" id="dice2">
-          <div class="dice-strip" id="strip2"></div>
-        </div>
-      </div>
-      
-      <div class="controls centered-controls">
-        <button id="roll">Roll Dice</button>
-      </div>
-      <p>The dice roll independently and fairly.</p>
-    <p>Each die has an equal probability of rolling any number from 1 to 6.</p>
+<ul>
+  <li>Each die has an <strong>equal probability of rolling any number from 1 to 6</strong>.</li>
+</ul>
 
-      <p>
-        \[
-        P(\text{Roll Left}|\text{Roll Right})=P(\text{Roll Left})
-        \]
-      </p>
+<hr />
 
+<h3 id="3️⃣-testing-the-market--applying-adjustments"><strong>3️⃣ Testing the Market &amp; Applying Adjustments</strong></h3>
 
-      <table class="market-table">
-          <thead>
-            <tr>
-              <th>Die</th>
-              <th>Probability of Rolling 1</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Left</td>
-              <td>1/6</td>
-            </tr>
-            <tr>
-              <td>Right</td>
-              <td>1/6</td>
-            </tr>
-          </tbody>
-        </table>
+<ol>
+  <li><strong>The Dice Master rolls 2d6</strong>, determining the <strong>market test result</strong>.</li>
+  <li>Players who <strong>tested the market</strong> receive the <strong>sum of both dice</strong> as their base score.</li>
+  <li>If a <strong>1 appears on either die</strong>, the market <strong>scratches</strong> (players who rolled earn <strong>0 points</strong> for the entire round).</li>
+  <li>The <strong>market condition modifies scores</strong> for those who successfully rolled:</li>
+</ol>
 
-    </div>
+<ul>
+  <li><strong>Bust</strong> (-15% penalty)</li>
+  <li><strong>Neutral</strong> (no change)</li>
+  <li><strong>Boon</strong> (+35% bonus)</li>
+</ul>
 
+<p><strong>Example Scoring for a Player Who Tests the Market:</strong>
+| <strong>Dice Roll (Market Test)</strong> | <strong>Base Score</strong> | <strong>Bust (-15%)</strong> | <strong>Neutral (0%)</strong> | <strong>Boon (+35%)</strong> |
+|————–|————–|—————–|—————–|—————–|
+| <strong>7</strong> | 7 pts | 6 pts | 7 pts | 9 pts |
+| <strong>10</strong> | 10 pts | 8.5 pts | 10 pts | 13.5 pts |
+| <strong>Scratch (1 on either die)</strong> | 0 pts | 0 pts | 0 pts | 0 pts |</p>
 
-  </div>
-</div>
-  
-  <h2>Profit</h2>
-  <div class="controls centered-controls">
-    <button id="reset">Reset Market</button>
-  </div>
-  <div class="history" id="history"></div>
+<hr />
 
+<h3 id="4️⃣-end-of-round--team-average-is-calculated"><strong>4️⃣ End of Round &amp; Team Average is Calculated</strong></h3>
 
-  
-  <script>
-    // Variable to store the currently highlighted block
-    let highlightedBlock = null;
+<ol>
+  <li>Play continues until a <strong>1 is rolled</strong> or all players choose to stay.</li>
+  <li>The game moves to the <strong>next round</strong>!</li>
+  <li>There are <strong>6 rounds</strong>, one for each letter of MARKET.</li>
+</ol>
 
-    // Function to highlight a block
-    function highlightBlock(blockId) {
-      // Remove highlight from the previously highlighted block
-      if (highlightedBlock) {
-        highlightedBlock.classList.remove('highlighted');
-      }
+<hr />
 
-      // Highlight the newly clicked block
-      const block = document.getElementById(blockId);
-      block.classList.add('highlighted');
+<h2 id="-winning-the-game"><strong>🏆 Winning the Game</strong></h2>
 
-      // Update the highlightedBlock variable
-      highlightedBlock = block;
-    }
+<ul>
+  <li>The team with the <strong>highest average score</strong> after six rounds <strong>wins the MARKET challenge</strong>!</li>
+  <li>If there’s a <strong>tie</strong>, the team with <strong>fewer scratches</strong> wins.</li>
+</ul>
 
-    // Add event listeners to the letter blocks
-    document.getElementById('block-M').addEventListener('click', () => highlightBlock('block-M'));
-    document.getElementById('block-A').addEventListener('click', () => highlightBlock('block-A'));
-    document.getElementById('block-R').addEventListener('click', () => highlightBlock('block-R'));
-    document.getElementById('block-K').addEventListener('click', () => highlightBlock('block-K'));
-    document.getElementById('block-E').addEventListener('click', () => highlightBlock('block-E'));
-    document.getElementById('block-T').addEventListener('click', () => highlightBlock('block-T'));
+<hr />
 
-    // Create dice strips with all faces
-    function createDiceStrip(stripId) {
-      const strip = document.getElementById(stripId);
-      strip.innerHTML = '';
-      
-      // Create multiple sets of dice faces for the animation effect
-      for (let j = 0; j < 5; j++) { // Increased repetitions
-        for (let i = 1; i <= 6; i++) {
-          const face = document.createElement('div');
-          face.className = 'dice-face';
-          
-          const dotsContainer = document.createElement('div');
-          dotsContainer.className = `dice-dots dots-${i}`;
-          
-          // Add the appropriate number of dots
-          for (let d = 0; d < i; d++) {
-            const dot = document.createElement('span');
-            dot.className = 'dot';
-            dotsContainer.appendChild(dot);
-          }
-          
-          face.appendChild(dotsContainer);
-          strip.appendChild(face);
-        }
-      }
-      
-      return strip;
-    }
-    
-    const strip1 = createDiceStrip('strip1');
-    const strip2 = createDiceStrip('strip2');
-    
-    // Set initial position
-    strip1.style.top = '0px';
-    strip2.style.top = '0px';
-    
-    // Roll results array
-    let rollHistory = [];
-    
-    // Function to animate and roll dice
-    function rollDice() {
-      const dice1 = Math.floor(Math.random() * 6) + 1;
-      const dice2 = Math.floor(Math.random() * 6) + 1;
-      const sum = dice1 + dice2;
-      
-      // Calculate final positions (middle set of faces)
-      const faceHeight = 100; // Height of each dice face in pixels
-      const finalPos1 = -((dice1 - 1 + 12) * faceHeight); // +12 to target middle set
-      const finalPos2 = -((dice2 - 1 + 12) * faceHeight);
-      
-      // Start from random position in the first set
-      const startPos1 = -(Math.floor(Math.random() * 6) * faceHeight);
-      const startPos2 = -(Math.floor(Math.random() * 6) * faceHeight);
-      
-      strip1.style.transition = 'none';
-      strip2.style.transition = 'none';
-      strip1.style.top = `${startPos1}px`;
-      strip2.style.top = `${startPos2}px`;
-      
-      // Force reflow
-      void strip1.offsetHeight;
-      void strip2.offsetHeight;
-      
-      // Set animation
-      strip1.style.transition = 'top 2s ease-out'; // Increased duration
-      strip2.style.transition = 'top 2s ease-out'; // Increased duration
-      strip1.style.top = `${finalPos1}px`;
-      strip2.style.top = `${finalPos2}px`;
-      
-      // Add to history
-      const timestamp = new Date().toLocaleTimeString();
-      rollHistory.unshift({ dice1, dice2, sum, timestamp });
-      updateHistory();
-      
-      // Disable button during animation
-      document.getElementById('roll').disabled = true;
-      setTimeout(() => {
-        document.getElementById('roll').disabled = false;
-      }, 2000); // Increased duration
-    }
-    
-// Update history display
-// Update history display
-function updateHistory() {
-  const historyElement = document.getElementById('history');
-  historyElement.innerHTML = `
-    <table>
-      <thead>
-        <tr>
-          <th>Roll Number</th>
-          <th>Die 1</th>
-          <th>Die 2</th>
-          <th>Total</th>
-          <th>Running Total</th>
-          <th>Profit</th>
-        </tr>
-      </thead>
-      <tbody id="history-body">
-      </tbody>
-    </table>
-  `;
+<h2 id="-strategy-tips"><strong>📋 Strategy Tips</strong></h2>
 
-  const historyBody = document.getElementById('history-body');
-  let runningTotal = 0;
-  let profitMultiplier = 1; // Default multiplier
+<p>✔️ <strong>Know when to take risks!</strong> Testing the market early can build up points, but doing so too often may result in scratches.<br />
+✔️ <strong>Watch the market!</strong> Adjust your decisions based on whether the market is in Boon, Neutral, or Bust.<br />
+✔️ <strong>Team strategy matters!</strong> A mix of safe and risky play can help keep your team average high.</p>
 
-  // Determine the profit multiplier based on the slot result
-  const slotResult = document.querySelector('.slot-face.highlighted');
-  if (slotResult) {
-    if (slotResult.classList.contains('boon')) {
-      profitMultiplier = 1.35;
-    } else if (slotResult.classList.contains('neutral')) {
-      profitMultiplier = 1;
-    } else if (slotResult.classList.contains('bust')) {
-      profitMultiplier = 0.85;
-    }
-  }
+<hr />
 
-  // Iterate through the rollHistory array in reverse order
-  for (let index = rollHistory.length - 1; index >= 0; index--) {
-    const roll = rollHistory[index];
-    runningTotal += roll.sum;
-    // Check if either dice1 or dice2 is 1 and reset running total to 0
-    if (roll.dice1 === 1 || roll.dice2 === 1) {
-      runningTotal = 0;
-    }
-    const profit = (runningTotal * profitMultiplier).toFixed(2); // Calculate profit
-    const row = document.createElement('tr');
-    row.innerHTML = `
-      <td>${rollHistory.length - index}</td>
-      <td>${roll.dice1}</td>
-      <td>${roll.dice2}</td>
-      <td>${roll.sum}</td>
-      <td>${runningTotal}</td>
-      <td>${profit}</td>
-    `;
+<h2 id="-game-flow"><strong>📅 Game Flow</strong></h2>
 
-    // Check if either dice1 or dice2 is 1 and add a class to the row and remove button
-    if (roll.dice1 === 1 || roll.dice2 === 1) {
-      row.classList.add('highlight-red');
-      document.getElementById('roll').style.display = 'none';
-    }
+<table>
+  <thead>
+    <tr>
+      <th><strong>Step</strong></th>
+      <th><strong>Action</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1️⃣</strong></td>
+      <td>Dice Master rolls a <strong>d3</strong> to determine Market Condition.</td>
+    </tr>
+    <tr>
+      <td><strong>2️⃣</strong></td>
+      <td>Players decide whether to <strong>TEST THE MARKET (ROLL) or STAY</strong>.</td>
+    </tr>
+    <tr>
+      <td><strong>3️⃣</strong></td>
+      <td>The Dice Master rolls <strong>2d6</strong> for all players who chose to roll.</td>
+    </tr>
+    <tr>
+      <td><strong>4️⃣</strong></td>
+      <td>Points are <strong>adjusted</strong> based on Market Condition.</td>
+    </tr>
+    <tr>
+      <td><strong>5️⃣</strong></td>
+      <td><strong>Repeat 2-4</strong> until all players <strong>STAY</strong> or <strong>1 is rolled</strong>.</td>
+    </tr>
+    <tr>
+      <td><strong>6️⃣</strong></td>
+      <td>Move to the <strong>next round</strong> (repeat for six rounds).</td>
+    </tr>
+    <tr>
+      <td><strong>7️⃣</strong></td>
+      <td><strong>Final team averages are compared to determine the winner!</strong></td>
+    </tr>
+  </tbody>
+</table>
 
-    historyBody.appendChild(row);
-  }
+<hr />
 
-  if (rollHistory.length === 0) {
-    historyBody.innerHTML = '<tr><td colspan="6">No rolls yet</td></tr>';
-  }
-}
+<h2 id="-final-summary"><strong>📜 Final Summary</strong></h2>
 
+<p>✅ <strong>Market conditions fluctuate</strong>—adapt your strategy!<br />
+✅ <strong>Testing the Market is risky</strong>—a scratch means zero points!<br />
+✅ <strong>Boon markets increase profits by 35%, Bust markets reduce profits by 15%.</strong><br />
+✅ <strong>Each player acts independently whether to roll or stay, but collaboration is encouraged.</strong><br />
+✅ <strong>All players who roll receive the same result (shared market roll).</strong><br />
+✅ <strong>The team with the highest average score wins!</strong></p>
 
-// Reset history
-    function resetHistory() {
-      rollHistory = [];
-      updateHistory();
-      document.getElementById('roll').style.display = 'block'; // Show the roll button
-      document.getElementById('spin').style.display = 'block'; // Show the spin button
+<p>Good luck, and may the market work in your favor! 📈🔥</p>
 
-      // Turn off the highlighting of the currently highlighted block
-  if (highlightedBlock) {
-    highlightedBlock.classList.remove('highlighted');
-    highlightedBlock = null; // Reset the highlightedBlock variable
-  }
-    }
-    
-    // Event listeners
-    document.getElementById('roll').addEventListener('click', rollDice);
-    document.getElementById('reset').addEventListener('click', resetHistory);
-    
-    // Initialize history display
-    updateHistory();
-    
-    // Create slot strips with all faces
-    function createSlotStrip(stripId) {
-      const strip = document.getElementById(stripId);
-      strip.innerHTML = '';
-      
-      // Create multiple sets of slot faces for the animation effect
-      const slotFaces = ['BOON', 'Neutral', 'BUST'];
-      for (let j = 0; j < 5; j++) { // Increased repetitions
-        for (let i = 0; i < slotFaces.length; i++) {
-          const face = document.createElement('div');
-          face.className = `slot-face ${slotFaces[i].toLowerCase()}`;
-          face.textContent = slotFaces[i];
-          strip.appendChild(face);
-        }
-      }
-      
-      return strip;
-    }
-    
-    const slotStrip1 = createSlotStrip('slot-strip1');
-    
-    // Set initial position
-    slotStrip1.style.top = '0px';
-    
-    // Function to animate and spin slots
-    function spinSlots() {
-      const slotFaces = ['BOON', 'Neutral', 'BUST'];
-      const slot1 = Math.floor(Math.random() * slotFaces.length);
-      
-      // Calculate final positions (middle set of faces)
-      const faceHeight = 100; // Height of each slot face in pixels
-      const finalPos1 = -((slot1 + slotFaces.length * 2) * faceHeight); // +slotFaces.length * 2 to target middle set
-      
-      // Start from random position in the first set
-      const startPos1 = -(Math.floor(Math.random() * slotFaces.length) * faceHeight);
-      
-      slotStrip1.style.transition = 'none';
-      slotStrip1.style.top = `${startPos1}px`;
-      
-      // Force reflow
-      void slotStrip1.offsetHeight;
-      
-      // Set animation
-      slotStrip1.style.transition = 'top 2s ease-out'; // Increased duration
-      slotStrip1.style.top = `${finalPos1}px`;
-      
-      // Disable button during animation
-      document.getElementById('spin').disabled = true;
-      setTimeout(() => {
-        document.getElementById('spin').disabled = false;
-      }, 2000); // Increased duration
-
-      // Hide the button after clicking it once
-         document.getElementById('spin').style.display = 'none';
-
-           // Remove the highlighted class from any previously highlighted slot face
-  const previousHighlighted = document.querySelector('.slot-face.highlighted');
-  if (previousHighlighted) {
-    previousHighlighted.classList.remove('highlighted');
-  }
-
-  // Add the highlighted class to the slot face element that represents the result of the spin
-  const slotFacesElements = document.querySelectorAll('.slot-face');
-  slotFacesElements[slot1 + slotFaces.length].classList.add('highlighted'); // Target the middle set
-    }
-    
-    
-    // Event listeners
-    document.getElementById('spin').addEventListener('click', spinSlots);
-  </script>
-</body>
-</html>
 </div>
 
                     </div>

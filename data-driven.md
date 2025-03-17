@@ -13,7 +13,7 @@ Participants in **Data Driven** engage in five unique games, each designed to ch
 
 ---
 
-## 📈 MARKET: Managing Risk & Reward
+## 📈 [MARKET: Managing Risk & Reward](/market)
 
 **Overview:**  
 A game of probability, risk management, and strategy. Players accumulate points over multiple rounds while navigating market conditions that impact their success.
@@ -23,14 +23,14 @@ A game of probability, risk management, and strategy. Players accumulate points 
 - Players roll two six-sided dice (2d6) each round.
 - Rolling a **1** on either die results in a "scratch" (losing all points for that round).
 - Before rolling, players decide to **"roll"** for more points or **"stay"** to secure their current total.
-- The **Market State** (Boom, Bust, or Neutral) modifies final scores.
+- The **Market State** (Boon, Bust, or Neutral) modifies final scores.
 - The team with the highest **average** score after six rounds wins.
 
-#### To practice dice mechanics, visit [MARKET page](/market).
+#### To practice dice mechanics, visit [MARKET Practice page](/market-practice).
 
 ---
 
-## 🎲 Game Design: Unfair Dice & Hypothesis Testing
+## 🎲 [Game Design: Unfair Dice & Hypothesis Testing](/game-design)
 
 **Overview:**  
 Hypothesis testing is essential for scientific inquiry, helping us validate or refute assumptions using empirical data. In this game, teams will explore probability by designing experiments with unfair dice.
@@ -46,7 +46,7 @@ Hypothesis testing is essential for scientific inquiry, helping us validate or r
 
 ---
 
-## 📊 Data Stories: Communicating Insights
+## 📊 [Data Stories: Communicating Insights](/data-stories)
 
 **Overview:**  
 Data analysis is crucial for drawing meaningful conclusions and driving innovation. In this game, teams will interpret data to tell a compelling story and propose a solution to a real-world challenge.
@@ -63,7 +63,7 @@ Data analysis is crucial for drawing meaningful conclusions and driving innovati
 
 ---
 
-## 🎪 Bayesian Circus: Predicting Probability
+## 🎪 [Bayesian Circus: Predicting Probability](/bayesian-circus)
 
 **Overview:**  
 Bayesian statistics is a powerful method for updating predictions based on prior knowledge. This game challenges students to refine their probability estimates based on observed data.
