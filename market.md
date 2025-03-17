@@ -2,7 +2,7 @@
 layout: page
 title: "MARKET"
 permalink: /market
-hide_hero: true
+hero_height: is-small
 show_sidebar: false
 menubar: games-menu
 ---
