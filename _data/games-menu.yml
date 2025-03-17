@@ -6,15 +6,12 @@
       link: #
       items:
         - name: MARKET
-          link: /market/
-          items:
-            - name: MARKET- Dice Mechanics Practice
-              link: /market-practice/
+          link: /market
         - name: Game Design
-          link: /game-design/
+          link: /game-design
         - name: Data Stories
-          link: /data-stories/
+          link: /data-stories
         - name: Bayesian Circus
-          link: /bayesian-circus/
+          link: /bayesian-circus
         - name: Input-Output
-          link: /input-output/
+          link: /input-output
