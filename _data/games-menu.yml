@@ -1,7 +1,7 @@
 - label: Games
   items:
     - name: Data Driven Overview
-      link: /
+      link: /data-driven
     - name: Games
       link: #
       items:
