@@ -81,7 +81,7 @@ Bayesian statistics is a powerful method for updating predictions based on prior
 
 ---
 
-## 🔢 Input-Output: Deciphering Patterns
+## 🔢 [Input-Output: Deciphering Patterns](/input-output)
 
 **Overview:**  
 Mathematical reasoning and pattern recognition are key problem-solving skills. In this game, teams will compete head-to-head to identify hidden rules governing input-output relationships.

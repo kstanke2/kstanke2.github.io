@@ -21,8 +21,8 @@
       link: /game-design
     - name: Data Stories
       link: /data-stories
-  #  - name: Input-Output
-  #    link: /input-output
+    - name: Input-Output
+      link: /input-output
 - name: Extension
   link: /extension-showcase
   #dropdown:
