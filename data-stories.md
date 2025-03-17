@@ -3,13 +3,15 @@ layout: page
 title: "Data Stories"
 permalink: /data-stories
 hero_height: is-small
+show_sidebar: false
+menubar: games-menu
 ---
 
 # 📊 Data Stories
 
 ## **Overview**
 
-The ability to analyze data is a crucial skill, enabling individuals to draw meaningful conclusions and make informed decisions. By enhancing your ability to uncover trends and patterns, you are also developing insights that drive innovation to address real-world problems.
+The ability to analyze data is a crucial skill, enabling individuals to **draw meaningful conclusions** and **make informed decisions**. By enhancing your ability to **uncover trends and patterns**, you are also developing insights that drive innovation to **address real-world problems**.
 
 ---
 

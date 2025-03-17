@@ -3,6 +3,8 @@ layout: page
 title: "Game Design"
 permalink: /game-design
 hero_height: is-small
+show_sidebar: false
+menubar: games-menu
 ---
 
 # 🎲 Game Design: Unfair Dice & Hypothesis Testing

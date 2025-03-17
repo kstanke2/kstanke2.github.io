@@ -3,6 +3,8 @@ layout: page
 title: "Data Driven"
 permalink: /data-driven
 hero_height: is-small
+show_sidebar: false
+menubar: games-menu
 ---
 
 # Data Driven: A Statistics & Data Science Field Day

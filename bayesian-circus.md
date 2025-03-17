@@ -3,7 +3,11 @@ layout: page
 title: "Bayesian Circus"
 permalink: /bayesian-circus
 hide_hero: true
+show_sidebar: false
+menubar: games-menu
 ---
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 # 🎪 Bayesian Circus: Iterative Guessing Challenge 🎲
 
@@ -150,9 +154,9 @@ This penalty encourages **small, logical updates** instead of wild swings!
 
 For **each color** in **each round**, your score is calculated as:
 
-\[
+$$
 \text{Score} = \text{Base Points} \times \min\left(10, \frac{10}{\text{Confidence Interval Width}}\right)
-\]
+$$
 
 ### **Key Rules**
 
@@ -183,9 +187,9 @@ Each round, **Base Points increase** because later rounds have more data availab
 
 Your **confidence interval size affects your multiplier**.
 
-\[
+$$
 \text{Multiplier} = \min\left(10, \frac{10}{\text{Confidence Interval Width}}\right)
-\]
+$$
 
 - **Smaller confidence intervals = higher scores!**
 - **If the interval is too wide, you score fewer points.**

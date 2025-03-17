@@ -3,6 +3,8 @@ layout: page
 title: "MARKET"
 permalink: /market
 hide_hero: true
+show_sidebar: false
+menubar: games-menu
 ---
 
 # 🏦 MARKET: The Probability & Risk Management Challenge 🎲
@@ -72,11 +74,12 @@ Each player on the team **individually** decides:
 - **Boon** (+35% bonus)
 
 **Example Scoring for a Player Who Tests the Market:**
-| **Dice Roll (Market Test)** | **Base Score** | **Bust (-15%)** | **Neutral (0%)** | **Boon (+35%)** |
-|--------------|--------------|-----------------|-----------------|-----------------|
-| **7** | 7 pts | 6 pts | 7 pts | 9 pts |
-| **10** | 10 pts | 8.5 pts | 10 pts | 13.5 pts |
-| **Scratch (1 on either die)** | 0 pts | 0 pts | 0 pts | 0 pts |
+
+| **Dice Roll (Market Test)**   | **Base Score** | **Bust (-15%)** | **Neutral (0%)** | **Boon (+35%)** |
+| ----------------------------- | -------------- | --------------- | ---------------- | --------------- |
+| **7**                         | 7 pts          | 6 pts           | 7 pts            | 9 pts           |
+| **10**                        | 10 pts         | 8.5 pts         | 10 pts           | 13.5 pts        |
+| **Scratch (1 on either die)** | 0 pts          | 0 pts           | 0 pts            | 0 pts           |
 
 ---
 
@@ -108,7 +111,7 @@ Each player on the team **individually** decides:
 | **Step** | **Action**                                                       |
 | -------- | ---------------------------------------------------------------- |
 | **1️⃣**   | Dice Master rolls a **d3** to determine Market Condition.        |
-| **2️⃣**   | Players decide whether to **TEST THE MARKET (ROLL) or STAY**.    |
+| **2️⃣**   | Players decide whether to **test the market (ROLL) or STAY**.    |
 | **3️⃣**   | The Dice Master rolls **2d6** for all players who chose to roll. |
 | **4️⃣**   | Points are **adjusted** based on Market Condition.               |
 | **5️⃣**   | **Repeat 2-4** until all players **STAY** or **1 is rolled**.    |

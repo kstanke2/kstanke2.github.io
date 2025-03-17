@@ -1,0 +1,20 @@
+- label: Games
+  items:
+    - name: Data Driven Overview
+      link: /
+    - name: Games
+      link: #
+      items:
+        - name: MARKET
+          link: /market/
+          items:
+            - name: MARKET- Dice Mechanics Practice
+              link: /market-practice/
+        - name: Game Design
+          link: /game-design/
+        - name: Data Stories
+          link: /data-stories/
+        - name: Bayesian Circus
+          link: /bayesian-circus/
+        - name: Input-Output
+          link: /input-output/
