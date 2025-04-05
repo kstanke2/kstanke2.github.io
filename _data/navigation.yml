@@ -25,6 +25,8 @@
       link: /input-output
 - name: Extension
   link: /extension-showcase
+- name: Student Work
+  link: /stat-101-final-project
   #dropdown:
   #  - name: Data Literacy at Raising Nebraska
   #    link: /data-literacy-at-raising-nebraska
